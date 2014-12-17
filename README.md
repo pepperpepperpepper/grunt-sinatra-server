@@ -2,19 +2,6 @@
 
 > Use grunt to control Sinatra's development server, and live-reload with grunt-contrib-watch! 
 
-## Getting Started
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
-
-In the shell...
-```shell
-npm install grunt-sinatra-server
-```
-
-Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
-
-```js
-grunt.loadNpmTasks('grunt-sinatra');
-```
 
 ## The "sinatra" task
 
@@ -22,36 +9,43 @@ grunt.loadNpmTasks('grunt-sinatra');
 ####sinatra:start (the default sinatra task)
 Launches the server and leaves it running even when the parent process is no longer running.
 
-####sinatra:kill
+####sinatra:stop --or-- sinatra:kill
 Terminates an already running server.
 
 ###Options
-pidFile
+The `sinatra` task should be configured with the following options:
 
+name:pidFile (REQUIRED)
 Type: `String`
 Default: `'/tmp/sinatraServer.pid'`
+Description: Path to the pid file in case you want to run the server by itself.
 
-Path to the pid file in case you want to run the server by itself.
-
-debug
+name: debug
 Type: `boolean`
 Default: `false`
+Description: Extra logging output.
 
-Extra logging output.
-
-args
+name: args
 Type: `array`
 Default: []
-
-Any additional arguments to add to the sinatra command can be supplied as an array of strings.
+Description: Any additional arguments to add to the sinatra command can be supplied as an array of strings.
 
 
 ### Getting Started
-In your project's Gruntfile, add `sinatra` to the taskList object passed into `grunt.registerTask`.
-ie:
+In the shell...
+```shell
+npm install grunt-sinatra-server
+```
+
+Load it by adding this to Gruntfile.js:
 
 ```js
-	grunt.registerTask('local', [
+grunt.loadNpmTasks('grunt-sinatra-server');
+```
+Then add `sinatra` to the taskList object passed into `grunt.registerTask` in Gruntfile.js.
+(example:)
+```js
+	grunt.registerTask('default', [
 		'concat',
 		'uglify',
 		'sinatra',
