@@ -15,20 +15,12 @@ Terminates an already running server.
 ###Options
 The `sinatra` task should be configured with the following options:
 
-name:pidFile (REQUIRED) </br>
-Type: `String` </br>
-Default: `'/tmp/sinatraServer.pid'` </br>
-Description: Path to the pid file in case you want to run the server by itself. </br>
+| Name | Type | Default  | Description                                               |
+| -----| ---- | -------- | ----------------------------------------------------------|
+| pidFile | `string` | `'/tmp/sinatraServer.pid'` | Path to the pid file. (REQUIRED) |
+| debug | `boolean` | `false` | Extra logging output (OPTIONAL)                      |
+| args | `array` | `[]` | Additional arguments to add to the sinatra command, supplied as an array of strings. (OPTIONAL) |
 
-name: debug </br>
-Type: `boolean` </br>
-Default: `false` </br>
-Description: Extra logging output. </br>
-
-name: args </br>
-Type: `array` </br>
-Default: [] </br>
-Description: Any additional arguments to add to the sinatra command can be supplied as an array of strings. </br>
 
 
 ### Getting Started
