@@ -15,11 +15,19 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
+//    sinatra: {
+//      options: {
+//        app_path : 'test/bin/hi.rb',
+//        debug : true,
+//        args : []
+//      },
+//    },
     sinatra: {
       options: {
-        app_path : 'test/bin/hi.rb',
+        app_cmd : 'rackup', 
+        app_path : 'test/rackup/config.ru',
         debug : true,
-        args : []
+//        args : ['-s', 'thin', '-p', '8182']  //Note: Don't daemonize the process by adding '-D'.
       },
     },
     watch: {

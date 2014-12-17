@@ -16,6 +16,7 @@ module.exports = function(grunt) {
     var options = this.options({
       pidFile : "/tmp/sinatraServer.pid",
       args : [],
+      app_cmd : 'ruby',
       app_path : 'bin/app.pl', 
       debug : false,
     });

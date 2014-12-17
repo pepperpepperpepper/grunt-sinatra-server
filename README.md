@@ -18,8 +18,10 @@ The `sinatra` task should be configured with the following options:
 | Name | Type | Default  | Description                                               |
 | -----| ---- | -------- | ----------------------------------------------------------|
 | pidFile | `string` | `'/tmp/sinatraServer.pid'` | Path to the pid file. (REQUIRED) |
-| debug | `boolean` | `false` | Extra logging output (OPTIONAL)                      |
+| app_cmd | `string` | `'ruby'` | Executable command to run the app, you can specify ruby, rack, a specific ruby version, etc. (REQUIRED) |
+| app_path | `string` | `'bin/app.rb'` | Really the first argument to pass to the executable, usually your app.rb or config.ru. (REQUIRED) |
 | args | `array` | `[]` | Additional arguments to add to the sinatra command, supplied as an array of strings. (OPTIONAL) |
+| debug | `boolean` | `false` | Extra logging output (OPTIONAL)                      |
 
 
 
@@ -44,7 +46,30 @@ Then add `sinatra` to the taskList object passed into `grunt.registerTask` in Gr
 		'watch'
 	]);
 ```
+Then configure the `sinatra` task:
+(example:)
+```js
+    sinatra: {
+      options: {
+        app_cmd : 'ruby-1.9', 
+        app_path : 'bin/hi.rb',
+        debug : true,
+        args : []
+      },
+    },
+```
+or with rack:
+```js
+    sinatra: {
+      options: {
+        app_cmd : 'rackup', 
+        app_path : 'config.ru',
+        debug : true,
+        args : ['-s', 'thin', '-p', '8182']  //Note: Don't daemonize the process by adding '-D'.
+      },
+    },
 
+``` 
 ##Running tests
 To run the test suite, first invoke the following command within the repo, installing the development dependencies:
 ```shell

@@ -121,7 +121,7 @@ describe("start sinatra with grunt watch", function(){
         });
         myproc.stdout.on('data', function(data){
           if (options.debug) console.log(data.toString());
-          if(data.toString().match(/Sinatra.*has taken the/)){
+          ifww(data.toString().match(/(?:Listening)|(?:start: pid=\d+ port=\d+)/)){
             done();
           }
         });
