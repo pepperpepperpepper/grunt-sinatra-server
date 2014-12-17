@@ -1,13 +1,13 @@
-# grunt-sinatra
+# grunt-sinatra-server
 
-> Control your Ruby Sinatra server via Grunt
+> Use grunt to control Sinatra's development server, and live-reload with grunt-contrib-watch! 
 
 ## Getting Started
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 In the shell...
 ```shell
-npm install grunt-sinatra
+npm install grunt-sinatra-server
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
