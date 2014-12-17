@@ -1,5 +1,5 @@
 {
-  "name": "grunt-sinatra",
+  "name": "grunt-sinatra-server",
   "description": "Use grunt to control Sinatra's development server, and live-reload with grunt-contrib-watch!",
   "version": "0.0.1",
   "homepage": "https://github.com/pepperpepperpepper/grunt-sinatra-server",
